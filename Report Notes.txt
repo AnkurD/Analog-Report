@@ -1,0 +1,16 @@
+Motors driven by 3 phase signal with the third phase shift set by back emf
+ESC manages this driving signal, but requires a TTL signal to control throttle
+Range from 4V to 2V for Duty cycle 25% to 65%
+Triangle wave needs 2.5V offset, with 4V p-p
+
+Accelerometer outputs voltage proportional to acceleration in X,Y,Z
+Thus the equilibrium position is (0,0,-g)
+To determine this equilibrium, we integrate the signal twice to determine to displacement, and select for the height we wish to hover at with a comparator. We also select for zero velocity in x and y with this method.
+These output voltages are scaled to range between 2 and 4V, thus varying the throttle of the motor. The feedback mechanism in this case is not electrical, but connected through the orientation of the copter, and how it'll affect the output of the accelerometer.
+
+Parts to be carried by copter:
+Motors x4
+ESC x4
+Battery
+Central control board (4x5 inches)
+TTL board x4
