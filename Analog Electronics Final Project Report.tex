@@ -132,5 +132,11 @@ In conclusion...
 \appendix
 \section{Appendix A: Characterizing Motors}
 Given a fixed motor and propeller combination, the only variable that can be adjusted in the RPM, which in turn determines the upward force each motor can generate. Although it would be possible to calculate this force numerically with the specific shape of the propeller, it is far more efficient to simply characterize the force as a function of voltage directly.\\
-
+\begin{figure}
+\centering
+%TODO Get pulley to mock up setup
+\caption{Diagram of the experimental setup for characterizing the motors.}
+\label{fig:motor}
+\end{figure}
+To accomplish this, the setup shown in Figure~\ref{fig:motor} will be used: a series of weights will balance the motor and propeller on either side of a pulley system. The motor will be connected to the ESC and PWM circuit, so it can be directly controlled by adjusting the set voltage on the comparator. As the voltage is increased (thereby speeding up the motor), additional weight will be added until the system comes to equilibrium again. This additional weight directly represents the force applied by the motor, and will allow us to construct a rudimentary characterization curve for our calibrations.
 \end{document}
