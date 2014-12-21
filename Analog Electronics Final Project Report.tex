@@ -6,7 +6,7 @@
 
 \documentclass[11pt]{article} % use larger type; default would be 10pt
 
-\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
 %%% Examples of Article customizations
 % These packages are optional, depending whether you want the features they provide.
@@ -20,7 +20,7 @@
 %   read geometry.pdf for detailed page layout information
 
 \usepackage{graphicx} % support the \includegraphics command and options
-\graphicspath{{fig/}}
+%\graphicspath{{fig/}}
 
 %%% PACKAGES
 \usepackage{booktabs} % for much better looking tables
@@ -78,11 +78,7 @@
 \section{Overview}
 The goal of this project is to create an analog circuit that can process the output of an accelerometer, interpret the orientation, and based on set values produce the required output to drive four motors on a quadcopter to balance the system.
 
-\section{Control Circuit}
-%TODO James to update with his design
-For this project we chose an accelerometer from Freescale Semi (FXLN8361QR1) which operated between 1.7\,V and 3.6\,V. The device can also toggle between a low sensitivity mode ($\pm8g$) and a high sensitivity mode ($\pm2g$). When the power is supplied and mode set, the accelerometer outputs three voltages proportional to the acceleration in X, Y, and Z.\\
-Thus on level ground at rest, the accelerometer should measure a net acceleration of $[0,0,-g]$. However, at zero acceleration, the device outputs an offset voltage of 0.75\,V, thus the equilibrium position in terms of voltage will be $[0.75\,V,0.75\,V,0.979\,V]$.\\
-To determine this equilibrium, we need to integrate the Z signal twice to determine the net displacement, and select for the height we wish to hover at with a comparator. Then to balance, we also integrate both X and Y signals once to select for zero velocity. Since the comparator will output a rail voltage based on the net difference between measured value and set point, it must be scaled to appropriately control the motors to restore balance.
+\input{CTRL}
 
 \section{Motor Control}
 %TODO Ankur to update this with triangle wave generator circuit
